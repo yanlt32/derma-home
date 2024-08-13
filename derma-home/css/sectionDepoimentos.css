@@ -1,0 +1,209 @@
+#depoimentos {
+    overflow: hidden;
+    position: relative;
+    background: var(--bg-black);
+}
+
+#depoimentos header h2 {
+    color: var(--color-text);
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+}
+
+/* Definindo o gradiente globalmente para teste */
+:root {
+    --gradient: linear-gradient(to right, #ff7e5f, #feb47b);
+    --text-gradient: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+#depoimentos header h2 span {
+    background: var(--gradient); /* Usando a variável para o gradiente */
+    -webkit-background-clip: text; /* Clipa o fundo do texto */
+    -webkit-text-fill-color: transparent; /* Faz o texto transparente para exibir o gradiente */
+    font-weight: 600;
+}
+
+#depoimentos header p {
+    font-size: 1.8rem;
+    font-weight: 500;
+    background: var(--text-gradient); /* Usando uma variável para o gradiente do texto */
+    -webkit-background-clip: text; /* Clipa o fundo do texto */
+    -webkit-text-fill-color: transparent; /* Faz o texto transparente para exibir o gradiente */
+    margin-bottom: 4rem;
+}
+
+
+#depoimentos .cards {
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+#depoimentos .cards .card {
+    position: relative;
+    user-select: none;
+}
+
+#depoimentos .cards .card img.agente {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 11/16;
+    object-fit: cover;
+    border-radius: 1rem;
+    filter: brightness(.6);
+}
+
+#depoimentos .cards .card .head {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#depoimentos .cards .card .head img.perfil {
+    width: 4rem;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+#depoimentos .cards .card .head h3 {
+    color: #f0f0f0;
+    font-size: 1.6rem;
+    text-align: left;
+}
+
+#depoimentos .cards .card .head p {
+    color: #170101;
+    font-size: 1.4rem;
+    text-align: left;
+}
+
+#depoimentos .cards .card .text {
+    position: absolute;
+    bottom: 3rem;
+    padding-inline: 2rem;
+}
+
+#depoimentos .cards .card .text h3 {
+    color: #f1f1f1fa;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+#depoimentos .cards .card .text p {
+    color: #b8b8b8;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+#depoimentos .cards .card .text .rank {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+#depoimentos .cards .card .text .rank img {
+    width: 5rem;
+    animation: rank infinite 2.5s ease-in-out;
+}
+
+#depoimentos .cards .card .text .rank img:nth-child(1) {
+    animation-delay: 1000ms;
+}
+
+@keyframes rank {
+    50% {
+        transform: translateY(-5px);
+        filter: drop-shadow(2px 2px 10px #ffffff88);
+    }
+}
+
+#depoimentos .cards .card .text .rank ion-icon {
+    color: #f1f1f1;
+    font-size: 2rem;
+}
+
+@media (min-width: 1080px) {
+    #depoimentos header h2 {
+        font-size: 4.5rem;
+    }
+
+    #depoimentos header p {
+        margin-bottom: 8rem;
+        font-size: 2rem;
+    }
+
+    #depoimentos .cards {
+        overflow: visible; /* Ajuste o overflow se necessário */
+        border-radius: 0;
+    }
+
+    #depoimentos .swiper {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #depoimentos .swiper:before,
+    #depoimentos .swiper:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 25rem;
+        height: 100%;
+        z-index: 2;
+    }
+    
+    #depoimentos .swiper:before {
+        left: 0;
+        background: linear-gradient(to left, rgba(229, 8, 8, 0), var(--bg-black));
+    }
+    
+    #depoimentos .swiper:after {
+        right: 0;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--bg-black));
+    }
+
+    #depoimentos .cards .card .text {
+        padding-inline: 4rem;
+    }
+
+    #depoimentos .cards .card img.agente {
+        mask-image: none; /* Remova a máscara para teste */
+    }
+
+    #depoimentos .image video.mobile {
+        display: none;
+    }
+
+    #depoimentos .image video.desktop {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1400px) {
+    #depoimentos header h2 {
+        font-size: 5rem;
+    }
+}
+
+@media (min-width: 1700px) {
+    #depoimentos header h2 {
+        font-size: 6rem;
+    }
+}
+
+@media (min-width: 2000px) {
+    #depoimentos .swiper:before,
+    #depoimentos .swiper:after {
+        width: 30rem;
+    }
+}
